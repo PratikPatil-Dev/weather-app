@@ -4,7 +4,9 @@ import { BiSearch } from "react-icons/bi";
 import { MdOutlineDarkMode } from "react-icons/md";
 import { CgProfile } from "react-icons/cg";
 
-const Navbar = () => {
+const Navbar = (props) => {
+  const { setInputCity, onKeyPress } = props;
+
   return (
     <nav className="flex justify-between p-2 items-center">
       <div className="flex">
@@ -22,6 +24,8 @@ const Navbar = () => {
             className="bg-[#E6EBF4] w-full px-2 outline-none"
             type="text"
             placeholder="Search city"
+            onChange={(e) => setInputCity(e?.target?.value)}
+            onKeyDown={onKeyPress}
           ></input>
         </div>
       </div>
