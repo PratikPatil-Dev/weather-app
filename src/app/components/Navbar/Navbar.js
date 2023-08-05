@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import { MdOutlineLocationOn } from "react-icons/md";
 import { BiSearch } from "react-icons/bi";
 import { MdOutlineDarkMode } from "react-icons/md";
 import { CgProfile } from "react-icons/cg";
+import WeatherDataContext from "@/app/context/WeatherDataContext";
 
 const Navbar = (props) => {
   const { setInputCity, onKeyPress } = props;
+  const { weatherData } = useContext(WeatherDataContext);
 
   return (
     <nav className="flex justify-between p-2 items-center">
@@ -14,7 +16,8 @@ const Navbar = (props) => {
           <img src="./PopCloud.png" alt="logo"></img>
         </div>
         <div className="flex items-center">
-          <MdOutlineLocationOn /> Location
+          <MdOutlineLocationOn /> {weatherData?.city?.name},
+          {weatherData?.city?.country}
         </div>
       </div>
       <div className="w-4/12">
