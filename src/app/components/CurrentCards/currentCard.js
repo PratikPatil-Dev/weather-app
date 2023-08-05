@@ -17,16 +17,21 @@ export default function CurrentCard() {
         min: Math.round(currentWeatherData?.main?.temp_min),
         max: Math.round(currentWeatherData?.main?.temp_max),
       });
-      setWind({
-        speed: Math.round(3.6 * currentWeatherData?.wind?.speed),
-        gust: Math.round(3.6 * currentWeatherData?.wind?.gust),
-      });
+      currentWeatherData?.wind?.gust
+        ? setWind({
+            speed: Math.round(3.6 * currentWeatherData?.wind?.speed),
+            gust: Math.round(3.6 * currentWeatherData?.wind?.gust),
+          })
+        : setWind({
+            speed: Math.round(3.6 * currentWeatherData?.wind?.speed),
+          });
       setSkyConditions({
         clouds: currentWeatherData?.clouds?.all,
         visibility: currentWeatherData?.visibility / 1000,
       });
+      console.log(wind);
     }
-  }, [weatherData]);
+  }, [weatherData, currentWeatherData]);
 
   return (
     <div className="cards w-full flex justify-evenly flex-wrap items-center">
@@ -62,9 +67,9 @@ export default function CurrentCard() {
         <div className=" m-auto">
           <h1 className="font-bold ">Wind</h1>
           <h3 className="text-sm text-slate-500">Speed : {wind.speed} km/h</h3>
-          <h3 className="text-sm text-slate-500">
+          { wind.gust ? <h3 className="text-sm text-slate-500">
             Wind gust: {wind.gust} km/hr
-          </h3>
+          </h3> :""}
         </div>
       </div>
       <div
