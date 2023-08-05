@@ -45,7 +45,7 @@ export default function Home() {
     latLong.lattitude
       ? axios
           .get(
-            `https://api.openweathermap.org/data/2.5/forecast?lat=${latLong.lattitude}&lon=${latLong.longitude}&appid=cab97398c632571dc95fc07ef2336e44&units=metric`
+            `http://api.openweathermap.org/data/2.5/forecast?lat=${latLong.lattitude}&lon=${latLong.longitude}&appid=cab97398c632571dc95fc07ef2336e44&units=metric`
           )
           .then((response) => {
             setWeatherData(response.data);
@@ -55,7 +55,7 @@ export default function Home() {
     latLong.lattitude
       ? axios
           .get(
-            `https://api.openweathermap.org/data/2.5/weather?lat=${latLong.lattitude}&lon=${latLong.longitude}&appid=cab97398c632571dc95fc07ef2336e44&units=metric`
+            `http://api.openweathermap.org/data/2.5/weather?lat=${latLong.lattitude}&lon=${latLong.longitude}&appid=cab97398c632571dc95fc07ef2336e44&units=metric`
           )
           .then((response) => {
             setCurrentWeatherData(response.data);
@@ -92,7 +92,7 @@ export default function Home() {
     manualLatLong.lattitude
       ? axios
           .get(
-            `https://api.openweathermap.org/data/2.5/forecast?lat=${manualLatLong.lattitude}&lon=${manualLatLong.longitude}&appid=cab97398c632571dc95fc07ef2336e44&units=metric`
+            `http://api.openweathermap.org/data/2.5/forecast?lat=${manualLatLong.lattitude}&lon=${manualLatLong.longitude}&appid=cab97398c632571dc95fc07ef2336e44&units=metric`
           )
           .then((response) => {
             setWeatherData(response.data);
@@ -103,7 +103,7 @@ export default function Home() {
     manualLatLong.lattitude
       ? axios
           .get(
-            `https://api.openweathermap.org/data/2.5/weather?lat=${manualLatLong.lattitude}&lon=${manualLatLong.longitude}&appid=cab97398c632571dc95fc07ef2336e44&units=metric`
+            `http://api.openweathermap.org/data/2.5/weather?lat=${manualLatLong.lattitude}&lon=${manualLatLong.longitude}&appid=cab97398c632571dc95fc07ef2336e44&units=metric`
           )
           .then((response) => {
             setCurrentWeatherData(response.data);
