@@ -15,7 +15,7 @@ export default function Home() {
   const [inputCity, setInputCity] = useState("");
   const [manualLatLong, setManualLatLong] = useState({});
   const [weatherData, setWeatherData] = useState({});
-  const [currentWeatherData, setCurrentWeatherData] = useState({})
+  const [currentWeatherData, setCurrentWeatherData] = useState({});
   useEffect(() => setIsModalOpen(true), []);
 
   // Auto detect location and fetch Weather Data
@@ -52,15 +52,15 @@ export default function Home() {
           })
       : "";
 
-      latLong.lattitude
-        ? axios
-            .get(
-              `https://api.openweathermap.org/data/2.5/weather?lat=${latLong.lattitude}&lon=${latLong.longitude}&appid=cab97398c632571dc95fc07ef2336e44&units=metric`
-            )
-            .then((response) => {
-              setCurrentWeatherData(response.data);
-            })
-        : "";
+    latLong.lattitude
+      ? axios
+          .get(
+            `https://api.openweathermap.org/data/2.5/weather?lat=${latLong.lattitude}&lon=${latLong.longitude}&appid=cab97398c632571dc95fc07ef2336e44&units=metric`
+          )
+          .then((response) => {
+            setCurrentWeatherData(response.data);
+          })
+      : "";
   }, [latLong]);
 
   // get manually entered location and fetch weather data
@@ -96,24 +96,29 @@ export default function Home() {
           )
           .then((response) => {
             setWeatherData(response.data);
+            console.log(response.data);
           })
       : "";
 
-      latLong.lattitude
-        ? axios
-            .get(
-              `https://api.openweathermap.org/data/2.5/weather?lat=${latLong.lattitude}&lon=${latLong.longitude}&appid=cab97398c632571dc95fc07ef2336e44&units=metric`
-            )
-            .then((response) => {
-              setCurrentWeatherData(response.data);
-            })
-        : "";
+    manualLatLong.lattitude
+      ? axios
+          .get(
+            `https://api.openweathermap.org/data/2.5/weather?lat=${manualLatLong.lattitude}&lon=${manualLatLong.longitude}&appid=cab97398c632571dc95fc07ef2336e44&units=metric`
+          )
+          .then((response) => {
+            setCurrentWeatherData(response.data);
+            console.log(response.data);
+          })
+      : "";
   }, [manualLatLong]);
 
   useEffect(() => {
     console.log(currentWeatherData);
   }, [currentWeatherData]);
 
+  useEffect(() => {
+    console.log(weatherData);
+  }, [weatherData]);
   return (
     <>
       <WeatherDataContext.Provider value={{ weatherData, currentWeatherData }}>

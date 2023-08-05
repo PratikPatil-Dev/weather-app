@@ -14,15 +14,15 @@ export default function CurrentCard() {
       setIcon(weatherData?.list[0]?.weather[0]?.icon);
       setWeatherCondition(weatherData?.list[0]?.weather[0]);
       setTemp({
-        min: Math.round(currentWeatherData?.main.temp_min),
-        max: Math.round(currentWeatherData?.main.temp_max),
+        min: Math.round(currentWeatherData?.main?.temp_min),
+        max: Math.round(currentWeatherData?.main?.temp_max),
       });
       setWind({
-        speed: Math.round(3.6 * currentWeatherData?.wind.speed),
-        gust: Math.round(3.6 * currentWeatherData?.wind.gust),
+        speed: Math.round(3.6 * currentWeatherData?.wind?.speed),
+        gust: Math.round(3.6 * currentWeatherData?.wind?.gust),
       });
       setSkyConditions({
-        clouds: currentWeatherData?.clouds.all,
+        clouds: currentWeatherData?.clouds?.all,
         visibility: currentWeatherData?.visibility / 1000,
       });
     }
