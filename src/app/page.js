@@ -124,8 +124,8 @@ export default function Home() {
       <WeatherDataContext.Provider value={{ weatherData, currentWeatherData }}>
         <div className="h-screen">
           <Navbar setInputCity={setInputCity} onKeyPress={onKeyPress} />
-          <main className="section1 w-4/5 my-4 mx-auto flex justify-between ">
-            <Dashboard weatherData={weatherData} />
+          <main className="section1 w-4/5 my-4 mx-auto md:flex justify-between ">
+            <Dashboard />
             <CurrentCard />
           </main>
           <main className="section2 w-4/5 my-4 mx-auto flex justify-between ">

@@ -58,7 +58,7 @@ export default function Dashboard() {
   }, []);
 
   return (
-    <div className="w-2/4 h-60 bg-gray-200 mr-4 rounded-xl overflow-hidden flex flex-col justify-between">
+    <div className="w-full md:w-2/4 h-60 bg-gray-200 mr-4 rounded-xl overflow-hidden flex flex-col justify-between my-4">
       <div className="flex justify-between py-2 px-2 ">
         <div>
           <h1>{day}</h1>
@@ -70,7 +70,7 @@ export default function Dashboard() {
       <div className="flex flex-col m-auto items-center w-40">
         <div className="flex w-full justify-evenly">
           <div>
-            <h1 className="text-7xl font-semibold">
+            <h1 className="text-7xl font-semibold mr-1">
               {Math.floor(currentWeatherData?.main?.temp)}&deg;
             </h1>
           </div>

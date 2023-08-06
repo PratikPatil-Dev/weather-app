@@ -36,7 +36,7 @@ export default function CurrentCard() {
     <div className="cards w-full flex justify-evenly flex-wrap items-center">
       <div
         id="card1"
-        className="bg-gray-200 h-24 w-72 rounded-full overflow-hidden flex"
+        className="bg-gray-200 h-24 w-full md:w-72 rounded-full overflow-hidden flex md:my-auto my-2"
       >
         <div>
           <img
@@ -54,7 +54,7 @@ export default function CurrentCard() {
       </div>
       <div
         id="card2"
-        className="bg-gray-200 h-24 w-72 rounded-full overflow-hidden flex"
+        className="bg-gray-200 h-24 w-full md:w-72 rounded-full overflow-hidden flex md:my-auto my-2"
       >
         <div className="w-24 h-full flex justify-center items-center">
           <img
@@ -77,7 +77,7 @@ export default function CurrentCard() {
       </div>
       <div
         id="card3"
-        className="bg-gray-200 h-24 w-72 rounded-full overflow-hidden flex"
+        className="bg-gray-200 h-24 w-full md:w-72 rounded-full overflow-hidden flex md:my-auto my-2"
       >
         <div className="w-24 h-full flex justify-center items-center">
           <img
@@ -94,7 +94,7 @@ export default function CurrentCard() {
       </div>
       <div
         id="card4"
-        className="bg-gray-200 h-24 w-72 rounded-full overflow-hidden flex"
+        className="bg-gray-200 h-24 w-full md:w-72 rounded-full overflow-hidden flex md:my-auto my-2"
       >
         <div className="w-24 h-full flex justify-center items-center">
           <img
