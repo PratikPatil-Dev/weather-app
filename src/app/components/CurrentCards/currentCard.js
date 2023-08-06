@@ -29,7 +29,6 @@ export default function CurrentCard() {
         clouds: currentWeatherData?.clouds?.all,
         visibility: currentWeatherData?.visibility / 1000,
       });
-      console.log(wind);
     }
   }, [weatherData, currentWeatherData]);
 
@@ -67,9 +66,13 @@ export default function CurrentCard() {
         <div className=" m-auto">
           <h1 className="font-bold ">Wind</h1>
           <h3 className="text-sm text-slate-500">Speed : {wind.speed} km/h</h3>
-          { wind.gust ? <h3 className="text-sm text-slate-500">
-            Wind gust: {wind.gust} km/hr
-          </h3> :""}
+          {wind.gust ? (
+            <h3 className="text-sm text-slate-500">
+              Wind gust: {wind.gust} km/hr
+            </h3>
+          ) : (
+            ""
+          )}
         </div>
       </div>
       <div

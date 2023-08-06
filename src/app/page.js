@@ -112,13 +112,13 @@ export default function Home() {
       : "";
   }, [manualLatLong]);
 
-  useEffect(() => {
-    console.log(currentWeatherData);
-  }, [currentWeatherData]);
+  // useEffect(() => {
+  //   console.log(currentWeatherData);
+  // }, [currentWeatherData]);
 
-  useEffect(() => {
-    console.log(weatherData);
-  }, [weatherData]);
+  // useEffect(() => {
+  //   console.log(weatherData);
+  // }, [weatherData]);
   return (
     <>
       <WeatherDataContext.Provider value={{ weatherData, currentWeatherData }}>
