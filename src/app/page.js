@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
 import WeatherDataContext from "./context/WeatherDataContext";
 import Navbar from "./components/Navbar/Navbar";
 import Dashboard from "./components/Dashboard/Dashboard";
-import Map from "./components/Map/Map";
 import CurrentCard from "./components/CurrentCards/currentCard";
 import ForecastCards from "./components/ForecastCards/ForecastCards";
 import Modal from "./components/Modal/Modal";
