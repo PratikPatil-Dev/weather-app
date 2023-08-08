@@ -28,8 +28,8 @@ const Navbar = (props) => {
           ></input>
         </div>
       </div>
-      <div className="flex justify-between w-16 md:w-20  text-slate-600">
-        <div className="md:flex items-center hidden text-slate-600">
+      <div className="flex justify-between w-fit  text-slate-600">
+        <div className="md:flex items-center hidden text-slate-600 ">
           <MdOutlineLocationOn /> {weatherData?.city?.name},
           {weatherData?.city?.country}
         </div>
