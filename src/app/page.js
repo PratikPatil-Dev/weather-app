@@ -8,6 +8,7 @@ import CurrentCard from "./components/CurrentCards/currentCard";
 import ForecastCards from "./components/ForecastCards/ForecastCards";
 import Modal from "./components/Modal/Modal";
 import axios from "axios";
+import TempChart from "./components/Chart/Chart";
 
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(true);
@@ -16,6 +17,8 @@ export default function Home() {
   const [manualLatLong, setManualLatLong] = useState({});
   const [weatherData, setWeatherData] = useState({});
   const [currentWeatherData, setCurrentWeatherData] = useState({});
+  const [next5Days, setNext5Days] = useState([]);
+  const [forecast, setforecast] = useState([]);
   useEffect(() => setIsModalOpen(true), []);
 
   // Auto detect location and fetch Weather Data
@@ -96,7 +99,6 @@ export default function Home() {
           )
           .then((response) => {
             setWeatherData(response.data);
-            console.log(response.data);
           })
       : "";
 
@@ -107,21 +109,23 @@ export default function Home() {
           )
           .then((response) => {
             setCurrentWeatherData(response.data);
-            console.log(response.data);
           })
       : "";
   }, [manualLatLong]);
 
-  // useEffect(() => {
-  //   console.log(currentWeatherData);
-  // }, [currentWeatherData]);
+  const updateDays = (days) => {
+    setNext5Days(days);
+  };
 
-  // useEffect(() => {
-  //   console.log(weatherData);
-  // }, [weatherData]);
+  const getForecastData = (forecastData) => {
+    setforecast(forecastData);
+  };
+
   return (
     <>
-      <WeatherDataContext.Provider value={{ weatherData, currentWeatherData }}>
+      <WeatherDataContext.Provider
+        value={{ weatherData, currentWeatherData, next5Days, forecast }}
+      >
         <div className="h-screen">
           <Navbar setInputCity={setInputCity} onKeyPress={onKeyPress} />
           <main className="section1 w-4/5 my-4 mx-auto md:flex justify-between ">
@@ -129,13 +133,12 @@ export default function Home() {
             <CurrentCard />
           </main>
           <main className="section2 w-4/5 my-4 mx-auto flex justify-between ">
-            <Map />
+            <TempChart />
             <div className="cards w-full flex justify-evenly flex-wrap items-center">
-              <ForecastCards />
-              <ForecastCards />
-              <ForecastCards />
-              <ForecastCards />
-              <ForecastCards />
+              <ForecastCards
+                updateDays={updateDays}
+                getForecastData={getForecastData}
+              />
             </div>
           </main>
         </div>

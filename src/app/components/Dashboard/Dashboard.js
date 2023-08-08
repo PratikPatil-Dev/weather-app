@@ -10,10 +10,6 @@ export default function Dashboard() {
   const [weatherCondition, setWeatherCondition] = useState("");
   const [videoLink, setVideoLink] = useState("");
 
-  // useEffect(() => {
-  //   console.log(currentWeatherData);
-  // }, [currentWeatherData]);
-
   useEffect(() => {
     if (currentWeatherData?.weather) {
       let weatherConditions = currentWeatherData?.weather[0].description;
@@ -38,11 +34,9 @@ export default function Dashboard() {
     const date = new Date();
     setDay(weekday[date.getDay()]);
 
-    const now = new Date();
-
     // Get the hours and minutes from the IST date object
-    const hours = now.getHours();
-    const minutes = now.getMinutes();
+    const hours = date.getHours();
+    const minutes = date.getMinutes();
 
     // converting 24hr formt to 12hr format
     let time = "";
@@ -55,7 +49,6 @@ export default function Dashboard() {
       time += " AM";
     }
 
-    // Log the hours and minutes to the console
     setClock(time);
   }, []);
 
@@ -109,12 +102,22 @@ export default function Dashboard() {
           <div className="flex w-full justify-evenly ">
             <div>
               <h1 className="text-7xl font-semibold mr-1">
-                {Math.floor(currentWeatherData?.main?.temp)}&deg;
+                {currentWeatherData?.main?.temp &&
+                  Math.floor(currentWeatherData?.main?.temp)}
+                &deg;
               </h1>
             </div>
             <div className="border-l-2 border-white pl-4 my-auto">
-              <h1>{Math.floor(currentWeatherData?.main?.temp_min)}&deg;</h1>
-              <h1>{Math.floor(currentWeatherData?.main?.temp_max)}&deg;</h1>
+              <h1>
+                {currentWeatherData?.main?.temp_min &&
+                  Math.floor(currentWeatherData?.main?.temp_min)}
+                &deg;
+              </h1>
+              <h1>
+                {currentWeatherData?.main?.temp_max &&
+                  Math.floor(currentWeatherData?.main?.temp_max)}
+                &deg;
+              </h1>
             </div>
           </div>
           <div>

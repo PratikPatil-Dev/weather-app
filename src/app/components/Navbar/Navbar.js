@@ -13,16 +13,12 @@ const Navbar = (props) => {
     <nav className="flex justify-between p-2 items-center">
       <div className="flex">
         <div>
-          <img src="./PopCloud.png" alt="logo"></img>
-        </div>
-        <div className="md:flex items-center hidden ">
-          <MdOutlineLocationOn /> {weatherData?.city?.name},
-          {weatherData?.city?.country}
+          <img className="mt-2" src="./PopCloud.png" alt="logo"></img>
         </div>
       </div>
       <div className="w-4/12 flex justify-end mr-2">
         <div className="md:bg-[#E6EBF4] w-fit md:w-full py-1 px-2 rounded-xl flex items-center">
-          <BiSearch className="text-2xl " />
+          <BiSearch className="text-2xl text-slate-600" />
           <input
             className="bg-[#E6EBF4] w-full px-2 outline-none hidden md:block"
             type="text"
@@ -32,9 +28,11 @@ const Navbar = (props) => {
           ></input>
         </div>
       </div>
-      <div className="flex justify-between w-16 md:w-20 md:h-10">
-        <MdOutlineDarkMode size={25} />
-        <CgProfile size={25} />
+      <div className="flex justify-between w-16 md:w-20  text-slate-600">
+        <div className="md:flex items-center hidden text-slate-600">
+          <MdOutlineLocationOn /> {weatherData?.city?.name},
+          {weatherData?.city?.country}
+        </div>
       </div>
     </nav>
   );
