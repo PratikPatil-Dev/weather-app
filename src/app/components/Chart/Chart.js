@@ -1,7 +1,12 @@
 "use client";
 import React, { useContext, useEffect, useState } from "react";
+import dynamic from "next/dynamic";
 import Chart from "react-apexcharts";
 import WeatherDataContext from "@/app/context/WeatherDataContext";
+
+const DynamicChart = dynamic(() => import("react-apexcharts"), {
+  ssr: false, // Disable server-side rendering for this component
+});
 
 const TempChart = () => {
   const { next5Days, forecast } = useContext(WeatherDataContext);
