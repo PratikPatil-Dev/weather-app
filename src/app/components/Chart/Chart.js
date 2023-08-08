@@ -1,3 +1,4 @@
+"use client";
 import React, { useContext, useEffect, useState } from "react";
 import Chart from "react-apexcharts";
 import WeatherDataContext from "@/app/context/WeatherDataContext";
@@ -11,11 +12,14 @@ const TempChart = () => {
 
   useEffect(() => {
     const popArray = forecast.map((item) => {
-      return item.pop * 100;
+      return Math.trunc(item.pop * 100);
     });
     setPop(popArray);
   }, [forecast]);
 
+  useEffect(() => {
+    console.log(pop);
+  }, [pop]);
 
   useEffect(() => {
     setOptions({
