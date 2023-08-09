@@ -36,7 +36,7 @@ export default function CurrentCard() {
     <div className="cards w-full flex justify-evenly flex-wrap items-center">
       <div
         id="card1"
-        className="bg-gray-200 h-24 w-full md:w-72 rounded-full overflow-hidden flex md:my-auto my-2"
+        className="backdrop-blur-lg bg-white/25 h-24 w-full md:w-72 rounded-full overflow-hidden flex md:my-auto my-2"
       >
         <div>
           <img
@@ -47,14 +47,14 @@ export default function CurrentCard() {
         </div>
         <div className=" m-auto">
           <h1 className="font-bold ">{weatherCondition.main}</h1>
-          <h3 className="text-sm text-slate-500">
+          <h3 className="text-sm text-slate-700">
             Expect {weatherCondition.description}
           </h3>
         </div>
       </div>
       <div
         id="card2"
-        className="bg-gray-200 h-24 w-full md:w-72 rounded-full overflow-hidden flex md:my-auto my-2"
+        className="backdrop-blur-lg bg-white/25 h-24 w-full md:w-72 rounded-full overflow-hidden flex md:my-auto my-2"
       >
         <div className="w-24 h-full flex justify-center items-center">
           <img
@@ -65,9 +65,9 @@ export default function CurrentCard() {
         </div>
         <div className=" m-auto">
           <h1 className="font-bold ">Wind</h1>
-          <h3 className="text-sm text-slate-500">Speed : {wind.speed} km/h</h3>
+          <h3 className="text-sm text-slate-700">Speed : {wind.speed} km/h</h3>
           {wind.gust ? (
-            <h3 className="text-sm text-slate-500">
+            <h3 className="text-sm text-slate-700">
               Wind gust: {wind.gust} km/hr
             </h3>
           ) : (
@@ -77,7 +77,7 @@ export default function CurrentCard() {
       </div>
       <div
         id="card3"
-        className="bg-gray-200 h-24 w-full md:w-72 rounded-full overflow-hidden flex md:my-auto my-2"
+        className="backdrop-blur-lg bg-white/25 h-24 w-full md:w-72 rounded-full overflow-hidden flex md:my-auto my-2"
       >
         <div className="w-24 h-full flex justify-center items-center">
           <img
@@ -88,13 +88,13 @@ export default function CurrentCard() {
         </div>
         <div className=" m-auto">
           <h1 className="font-bold ">Today's High/Low</h1>
-          <h3 className="text-sm text-slate-500">Low: {temp.min}</h3>
-          <h3 className="text-sm text-slate-500">High: {temp.max}</h3>
+          <h3 className="text-sm text-slate-700">Low: {temp.min}&deg;</h3>
+          <h3 className="text-sm text-slate-700">High: {temp.max}&deg;</h3>
         </div>
       </div>
       <div
         id="card4"
-        className="bg-gray-200 h-24 w-full md:w-72 rounded-full overflow-hidden flex md:my-auto my-2"
+        className="backdrop-blur-lg bg-white/25 h-24 w-full md:w-72 rounded-full overflow-hidden flex md:my-auto my-2"
       >
         <div className="w-24 h-full flex justify-center items-center">
           <img
@@ -105,10 +105,10 @@ export default function CurrentCard() {
         </div>
         <div className=" m-auto">
           <h1 className="font-bold ">Sky Conditions</h1>
-          <h3 className="text-sm text-slate-500">
+          <h3 className="text-sm text-slate-700">
             Cloudiness: {skyConditions.clouds}%
           </h3>
-          <h3 className="text-sm text-slate-500">
+          <h3 className="text-sm text-slate-700">
             Visibility: {skyConditions.visibility} km
           </h3>
         </div>

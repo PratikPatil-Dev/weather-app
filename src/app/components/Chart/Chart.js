@@ -61,7 +61,7 @@ const TempChart = () => {
       ]);
   }, [next5Days, pop]);
   return (
-    <div className="app w-full md:w-2/4 h-60 mr-4 rounded-xl overflow-hidden flex flex-col justify-between my-4 relative">
+    <div className="app w-full md:w-2/4 h-64 rounded-xl overflow-hidden flex flex-col justify-between my-4 relative backdrop-blur-lg bg-white/25 md:p-2">
       <div className="row">
         <div className="mixed-chart">
           {typeof window !== "undefined" && (

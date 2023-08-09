@@ -50,7 +50,7 @@ export default function ForecastCards({ updateDays, getForecastData }) {
       {forecastData?.map((forecast, index) => (
         <div
           key={index}
-          className="bg-gray-200 w-28 h-full rounded-full overflow-hidden text-center flex flex-col justify-between"
+          className="backdrop-blur-lg bg-white/25 w-28 h-full rounded-full overflow-hidden text-center flex flex-col justify-between my-2"
         >
           <div className="">
             <h1 className="py-2 px-4 w-fit mx-auto border-b-2 border-black font-bold">
@@ -63,7 +63,7 @@ export default function ForecastCards({ updateDays, getForecastData }) {
               src={`https://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png`}
               alt="day rain"
             />
-            <p className="text-slate-600">{forecast.weather[0].main}</p>
+            <p className="text-slate-700">{forecast.weather[0].main}</p>
           </div>
           <div className="">
             <h1 className="py-2 px-4 w-fit mx-auto border-t-2 border-black font-bold">

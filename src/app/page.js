@@ -127,11 +127,11 @@ export default function Home() {
       >
         <div className="h-screen">
           <Navbar setInputCity={setInputCity} onKeyPress={onKeyPress} />
-          <main className="section1 w-4/5 my-4 mx-auto md:flex justify-between ">
+          <main className="section1 w-4/5 mt-20 md:my-4 mx-auto md:flex justify-between ">
             <Dashboard />
             <CurrentCard />
           </main>
-          <main className="section2 w-4/5 my-4 mx-auto flex justify-between ">
+          <main className="section2 md:w-4/5 my-8 mx-auto md:flex justify-between  ">
             <TempChart />
             <div className="cards w-full flex justify-evenly flex-wrap items-center">
               <ForecastCards
