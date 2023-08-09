@@ -1,12 +1,9 @@
-"use client";
-import React, { useContext, useEffect, useState } from "react";
-import dynamic from "next/dynamic";
-import Chart from "react-apexcharts";
+import React, { Component, useContext, useEffect, useState } from "react";
+// import Chart from "react-apexcharts";
 import WeatherDataContext from "@/app/context/WeatherDataContext";
+import dynamic from "next/dynamic";
 
-const DynamicChart = dynamic(() => import("react-apexcharts"), {
-  ssr: false, // Disable server-side rendering for this component
-});
+const Chart = dynamic(() => import("react-apexcharts"), { ssr: false });
 
 const TempChart = () => {
   const { next5Days, forecast } = useContext(WeatherDataContext);
@@ -67,7 +64,9 @@ const TempChart = () => {
     <div className="app w-full md:w-2/4 h-60 mr-4 rounded-xl overflow-hidden flex flex-col justify-between my-4 relative">
       <div className="row">
         <div className="mixed-chart">
-          <Chart options={options} series={series} type="line" width="400" />
+          {typeof window !== "undefined" && (
+            <Chart options={options} series={series} type="line" width="400" />
+          )}
         </div>
       </div>
     </div>
