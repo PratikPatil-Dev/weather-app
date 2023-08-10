@@ -9,6 +9,7 @@ import Modal from "./components/Modal/Modal";
 import axios from "axios";
 import TempChart from "./components/Chart/Chart";
 import toast, { Toaster } from "react-hot-toast";
+import { Input } from "postcss";
 
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(true);
@@ -156,6 +157,7 @@ export default function Home() {
   const onKeyPress = (event) => {
     if (event.keyCode === 13) {
       manualDetectLocation();
+      
     }
   };
 
@@ -204,7 +206,7 @@ export default function Home() {
       <WeatherDataContext.Provider
         value={{ weatherData, currentWeatherData, next5Days, forecast }}
       >
-        <div className="h-screen">
+        <div className="">
           <Toaster />
           <Navbar setInputCity={setInputCity} onKeyPress={onKeyPress} />
           <main className="section1 w-4/5 mt-20 md:my-4 mx-auto md:flex justify-between ">
