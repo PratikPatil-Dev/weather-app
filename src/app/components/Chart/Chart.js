@@ -20,10 +20,6 @@ const TempChart = () => {
   }, [forecast]);
 
   useEffect(() => {
-    console.log(pop);
-  }, [pop]);
-
-  useEffect(() => {
     setOptions({
       title: {
         text: "Chances of rain in %",

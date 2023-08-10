@@ -50,7 +50,7 @@ export default function ForecastCards({ updateDays, getForecastData }) {
       {forecastData?.map((forecast, index) => (
         <div
           key={index}
-          className="backdrop-blur-lg bg-white/25 w-28 h-full rounded-full overflow-hidden text-center flex flex-col justify-between my-2"
+          className="backdrop-blur-lg bg-white/25 w-28 h-64 rounded-full overflow-hidden text-center flex flex-col justify-between my-2"
         >
           <div className="">
             <h1 className="py-2 px-4 w-fit mx-auto border-b-2 border-black font-bold">
